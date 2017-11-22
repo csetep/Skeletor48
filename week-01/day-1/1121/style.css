@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+
+html {
+  font-family: 'Spectral SC', serif;   
+  background: url(./IMG/topography.png) center fixed; 
+  font-size: 18px;
+  }
+body {
+  margin: 0px;
+}
+.szovegtest, .szovegtest2, .definiciok {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*.loader {
+  border: 14px solid #13b829;
+  border-top: 14px solid #b4ee99;
+  border-radius: 50%;
+  color:green;
+  animation: spin 1s linear infinite;
+  margin-left: 10%; 
+}
+
+@keyframes spin {
+  20% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
+
+header {
+  background-color: #333333;
+  height:40px;
+}
+#headerpic {
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  display: inline;
+  margin-left: 10%; 
+}
+nav {
+  text-align: right;
+  height: 40px;
+  padding: 14px;
+  margin-right: 10%;
+}
+nav a {
+  color: #ff0099;
+  margin: 5px;
+}
+h1 {
+  font-size: 2.8em;
+  padding-top: 3%;
+}
+h3#title {
+  color: #ff0099;
+  font-size: 1.7em;
+}
+p, .definiciok {
+  font-family: 'consolas', courier;
+}
+#haromvonal {
+  padding: 2%;
+  text-align: center;
+  font-size: 2.8em;
+}
+h2 {
+  text-align: center;
+  font-size: 2.4em;
+}
+h3 {
+  font-size: 1.7em;
+}
+dt {
+  font-weight: bold;
+  padding: 4px; 
+}
+dd {
+  padding: 4px;
+}
+
+
+
+
