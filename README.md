@@ -10,7 +10,7 @@ Corsac Cohort - Asbest Class
 
 The very first website we made on 2017.11.21 (W1/D1)
 
-[skeletor48.github.io](https://github.com/Skeletor48/skeletor48.github.io)
+[skeletor48.github.io](http://skeletor48.github.io)
 
 
 
