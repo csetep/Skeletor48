@@ -1,0 +1,20 @@
+body {
+  margin: 5%;
+}
+h1 {
+  color: tomato;
+}
+h2 {
+  color: rgb(133, 19, 179);
+}
+p {
+  width: 370px;
+}
+ol {
+  list-style-type: upper-roman;
+  text-decoration: underline;
+  color: magenta;
+}
+ol li:last-child {
+  color: black;
+}
