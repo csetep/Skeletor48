@@ -1,0 +1,31 @@
+body {
+  font-size: 36px;
+  font-family: Helvetica, sans-serif;
+  color: #FFFFFF;
+}  
+div {
+  width: 380px;
+  height: 290px;
+  border: 16px solid;
+  border-color: #4285F4;
+  box-sizing: border-box;
+}
+p {
+  height: 50%;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div:first-of-type {
+  background-color: #E67676;
+  margin-bottom: 6px;
+}
+div:last-of-type {
+  background-color: #A9E6E6;
+  margin-bottom: 6px;
+}
+
+
+
