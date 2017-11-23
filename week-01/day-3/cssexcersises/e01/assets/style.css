@@ -1,0 +1,11 @@
+p {
+  width: 360px;
+  height: 146px;
+  margin: 18px;
+  padding: 22px 18px;
+  box-sizing: border-box;
+  background-color: #0E91A1;
+  border: 5px solid  #7DCE94;
+  font-size: 36px;
+  color: #005566;
+}
