@@ -1,0 +1,26 @@
+  
+div {
+  height: 104px;
+  width: 700px;
+  padding: 25px;
+  margin-bottom: 15px;
+  border: 2px solid;
+  border-color: #4285F4;
+  display: flex;
+  box-sizing: border-box;
+}
+span {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-color: #4285F4;
+}
+div:last-of-type {
+  background-color: tomato;
+}
+div:last-of-type span{
+  background-color: purple;
+}
+  
+
+
