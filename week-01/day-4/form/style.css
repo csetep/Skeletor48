@@ -1,0 +1,26 @@
+form {
+  box-sizing: border-box;
+  height: 786px;
+  width: 624px;
+  padding-top: 14px;
+  margin: 0 auto;
+  background-color: green;
+}
+div {
+  padding: 13px;
+  background-color: grey;
+  box-sizing: border-box;
+  margin-top: 14px;   
+}
+form div:nth-child(1) {
+  height: 42px;
+  margin-top: 12px;    
+}
+form div:nth-child(2), form div:nth-child(3) {
+  width: 312px;
+  height: 438px;
+  display: inline-block;  
+}  
+form div:nth-child(4) {
+  height: 186px;    
+}  
