@@ -26,9 +26,6 @@ namespace GreenFox
 
             Console.ReadKey();
        
-
-            // Write a program that prints the remaining seconds (as an integer) from a
-            // day if the current time is represented bt the variables
         }
     }
 }
