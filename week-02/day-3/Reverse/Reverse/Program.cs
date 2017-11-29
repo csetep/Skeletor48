@@ -8,20 +8,20 @@ namespace Reverse
         {
             string reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
-            Console.WriteLine(ReReverse(reversed));
+            Console.WriteLine(Revolver(reversed));
             Console.ReadLine();
         }
 
-        public static string ReReverse(string text)
+        public static string Revolver(string reversedtext)
         {
-            string rereversed = "";
+            string revolverText = "";
 
-            for (int i = text.Length - 1; i >= 0; i--)
+            for (int i = reversedtext.Length - 1; i >= 0; i--)
             {
-                rereversed += text[i];
+                revolverText += reversedtext[i];
             }
 
-            return rereversed;
+            return revolverText;
         }
     }
 }
