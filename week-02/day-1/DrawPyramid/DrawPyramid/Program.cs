@@ -8,6 +8,7 @@ namespace GreenFox
         {
             int lines = Convert.ToInt32(Console.ReadLine());
 
+
             string star = "*";
 
             for (int i = 0; i < lines; i++)
