@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
 
 namespace Anagram
 {
@@ -16,56 +11,37 @@ namespace Anagram
             char[] charListOne = inputone.ToUpper().ToCharArray();
 
             string inputtwo = (Console.ReadLine());
-            char[] charListTwo = inputtwo.ToUpper().ToCharArray();        
+            char[] charListTwo = inputtwo.ToUpper().ToCharArray();
 
             Array.Sort(charListOne);
             Array.Sort(charListTwo);
 
-            //bool anagram = true;
-            //anagram = (charListOne.Length != charListTwo.Length);
+            bool anagram = true;
 
             if (charListOne.Length != charListTwo.Length)
             {
-                Console.WriteLine("False!");
+                anagram = false;
             }
             else
             {
-                int count = 0;
-
-                foreach (char letters in charListTwo)
+                for (int i = 0; i < charListOne.Length; i++)
                 {
-                    if (letters == charListOne[count])
+
+                    anagram = (charListTwo[i] == charListOne[i]);
+
+                    if (anagram)
                     {
-                        count++;
+
                     }
+
                     else
                     {
-                        Console.WriteLine("False!");
                         break;
                     }
                 }
-
             }
-
-
-            // AnagramChecker(charListOne, charListTwo);
-
+            Console.WriteLine(anagram);
             Console.ReadKey();
         }
-
-
-
-
-
-
-       // static void AnagramChecker(char[] wordone, char[] wordtwo)
-        //{
-     //       Array.Sort(wordone);
-       //     Array.Sort(wordtwo);
-
-            
-        //}
-
-
     }
 }
