@@ -8,10 +8,19 @@ namespace Anagram
         {
             Console.WriteLine("Give me two words and than press enter!");
             string inputone = (Console.ReadLine());
-            char[] charListOne = inputone.ToUpper().ToCharArray();
+            char[] toAnagramFunctionOne = inputone.ToUpper().ToCharArray();
 
             string inputtwo = (Console.ReadLine());
-            char[] charListTwo = inputtwo.ToUpper().ToCharArray();
+            char[] toAnagramFunctionTwo = inputtwo.ToUpper().ToCharArray();
+
+            IsAnagram(toAnagramFunctionOne, toAnagramFunctionTwo);
+
+
+            Console.ReadKey();
+        }
+
+        static void IsAnagram(char[] charListOne, char[] charListTwo)
+        {
 
             Array.Sort(charListOne);
             Array.Sort(charListTwo);
@@ -41,7 +50,6 @@ namespace Anagram
                 }
             }
             Console.WriteLine(anagram);
-            Console.ReadKey();
         }
     }
 }
