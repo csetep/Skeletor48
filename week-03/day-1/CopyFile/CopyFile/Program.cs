@@ -7,12 +7,22 @@ namespace WriteMultipleLines
     {
         static void Main(string[] args)
         {
+            bool succes = true;
 
-            StreamReader inputPath = new StreamReader("my-text1.txt");
-            StreamWriter outputPath = new StreamWriter("my-text2.txt");
+            try
+            {
+                StreamReader inputPath = new StreamReader("my-text1.txt");
+                StreamWriter outputPath = new StreamWriter("my-text2.txt");
 
-            CopyCat(inputPath, outputPath);
+                CopyCat(inputPath, outputPath);
 
+                Console.WriteLine(" I copied the files successfully:{0}", succes);
+            }
+            catch (Exception)
+            {
+                succes = false;
+                Console.WriteLine(" I copied the files successfully:{0}", succes);
+            }
             Console.ReadKey();
         }
 
@@ -28,11 +38,3 @@ namespace WriteMultipleLines
         }
     }
 }
-
-
-
-
-// Write a function that reads all lines of a file and writes 
-// the read lines to an other file (a.k.a copies the file)
-// It should take the filenames as parameters
-// It should return a boolean that shows if the copy was successful
