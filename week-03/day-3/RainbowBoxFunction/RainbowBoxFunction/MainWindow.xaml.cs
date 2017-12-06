@@ -38,8 +38,10 @@ namespace RainbowBoxFunction
 
         public static void DrawBoxesCenter(FoxDraw foxDraw, double size, Color color)
         {
+            double canvasSize = 400;
+
             foxDraw.FillColor(color);
-            foxDraw.DrawRectangle(((400 - size) / 2), ((400 - size) / 2), size, size);
+            foxDraw.DrawRectangle(((canvasSize - size) / 2), ((canvasSize - size) / 2), size, size);
         }
     }
 }
