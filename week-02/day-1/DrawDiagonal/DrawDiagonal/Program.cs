@@ -19,7 +19,7 @@ namespace GreenFox
                     {
                         Console.Write(o);
                     }
-                    else if (j == 0 || j == number - 1 || j==i )
+                    else if (j == 0 || j == number - 1 ||i==j)
                     {
                         Console.Write(o);
                     }
