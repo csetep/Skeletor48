@@ -13,27 +13,23 @@ namespace PurpleSteps3d
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             int multiplier = 1;
-            double squarePosition = multiplier * 10;
-            double squareSize = squarePosition;
-            
+            int squarePosition = multiplier * 10;
+            int squareSize = squarePosition;
 
-            for (double i = 0; i < 16; i++)
+            for (int i = 0; i <= 6; i++)
+
             {
-                double j = 0;
-               
-
-                DrawPurpleSquare(foxDraw, (squarePosition*(i+(j*))), (squareSize *(i+1)));
-                j++;
-                j += j;
+                DrawPurpleSquare(foxDraw, squarePosition, (squareSize * i));
+                squarePosition = squarePosition + (i * squareSize);
             }
         }
 
-        public static void DrawPurpleSquare(FoxDraw foxDraw, double squarePosition, double squareSize)
+        public static void DrawPurpleSquare(FoxDraw foxDraw, int squarePosition, int squareSize)
         {
-            double x1 = squarePosition;
-            double y1 = squarePosition;
-            double width = squareSize;
-            double height = squareSize;
+            int x1 = squarePosition;
+            int y1 = squarePosition;
+            int width = squareSize;
+            int height = squareSize;
 
             foxDraw.FillColor(Color.FromRgb(250, 7, 226));
             foxDraw.DrawRectangle(x1, y1, width, height);
