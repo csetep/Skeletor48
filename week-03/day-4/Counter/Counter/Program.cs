@@ -17,7 +17,7 @@ namespace Counter
             if (counter >= 0)
             {
                 Console.WriteLine(n);
-                CountDown(counter - 1);
+                CountDown(--counter);
             }
         }
     }
