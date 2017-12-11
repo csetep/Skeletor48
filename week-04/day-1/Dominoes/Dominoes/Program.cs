@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domino;
 
 namespace Domino
 {
@@ -12,40 +11,30 @@ namespace Domino
             var dominoes = InitializeDominoes();
 
             int counter = 7;
-            int indexB = 0;
+            int indexRight = 0;
 
-                                
-
-            DominoSort(indexB, dominoes, counter);
+            Console.Write("[5][2]");
+            DominoSort(indexRight, dominoes, counter);
             Console.ReadKey();
-
-
-            
         }
 
-
-
-        private static void DominoSort(int indexB, List<Domino> dominoes, int counter)
+        private static void DominoSort(int indexRight, List<Domino> dominoes, int counter)
         {
-
             while (counter > 0)
             {
-                int j = 0;
-                int i = j;
-                int valueB = dominoes[indexB].GetValues()[1];
-                int valueA = dominoes[i].GetValues()[0];
-                int[] tempArray = dominoes[i].GetValues();
-
-                for (i=0; i < 6; i++)
+                for (int indexLeft = 0; indexLeft < 6; indexLeft++)
                 {
+                    int rightTile = dominoes[indexRight].GetValues()[1];
+                    int leftTile = dominoes[indexLeft].GetValues()[0];
+                    int[] dominoesArray = dominoes[indexLeft].GetValues();
 
-                    if (valueA == valueB)
+                    if (leftTile == rightTile)
                     {
-                        foreach (var item in tempArray)
+                        foreach (var domino in dominoesArray)
                         {
-                            Console.Write("[{0}]", item);
+                            Console.Write("[{0}]", domino);
                         }
-                        indexB = i;
+                        indexRight = indexLeft;
                         counter--;
                     }
                 }
@@ -63,7 +52,5 @@ namespace Domino
             dominoes.Add(new Domino(7, 1));
             return dominoes;
         }
-
     }
-
 }

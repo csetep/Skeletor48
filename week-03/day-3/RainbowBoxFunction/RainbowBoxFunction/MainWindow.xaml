@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="444" Width="440">
     <Grid>
-
-
         <Canvas Name="canvas"
             Height="400"
             Width="400"

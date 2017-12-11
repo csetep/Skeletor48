@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using GreenFox;
 
@@ -11,10 +9,10 @@ namespace RainbowBoxFunction
         public MainWindow()
         {
             InitializeComponent();
-
             var foxDraw = new FoxDraw(canvas);
 
-            double size = 400.0;
+            double size = 400;
+            double canvasSize = 400;
             double numberOfColours = 7;
             double downsize = (size / numberOfColours);
 
@@ -27,19 +25,15 @@ namespace RainbowBoxFunction
                 byte r = rArray[i];
                 byte g = gArray[i];
                 byte b = bArray[i];
-
                 Color color = Color.FromRgb(r, g, b);
 
-                DrawBoxesCenter(foxDraw, size, color);
-
+                DrawBoxesCenter(foxDraw, canvasSize, size, color);
                 size -= downsize;
             }
         }
 
-        public static void DrawBoxesCenter(FoxDraw foxDraw, double size, Color color)
+        public static void DrawBoxesCenter(FoxDraw foxDraw, double canvasSize, double size, Color color)
         {
-            double canvasSize = 400;
-
             foxDraw.FillColor(color);
             foxDraw.DrawRectangle(((canvasSize - size) / 2), ((canvasSize - size) / 2), size, size);
         }
