@@ -11,11 +11,8 @@ namespace AircraftCarrier
             Type = "F35";
             MaxAmmo = 8;
             BaseDamage = 30;
-            Ammo = 10;
-            AllDamage = BaseDamage * Ammo;
-
-            
-
+            Ammo = 0;
+            AllDamage = BaseDamage * Ammo;       
         }
 
 
