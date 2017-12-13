@@ -12,13 +12,14 @@ namespace AircraftCarrier
         public int MaxAmmo { get; set; }
         public int AllDamage { get; set; }
 
-
         public Aircraft()
         {
-           
-        }
-    
-       
 
+        }
+
+        public string getType()
+        {
+            return Type;
+        }
     }
 }
