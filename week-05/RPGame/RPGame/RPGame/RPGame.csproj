@@ -133,9 +133,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\wall.png">
+    <Content Include="Assets\wall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\hero-down.png">
