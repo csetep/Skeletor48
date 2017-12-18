@@ -21,46 +21,64 @@ namespace RPGame
     {
         private FoxDraw FoxDraw;
 
+        private double x = 0;
+        private double y = 0;
+
         public MainWindow()
         {
             InitializeComponent();
             FoxDraw = new FoxDraw(canvas);
             var map = new Map();
 
+
             map.MapBuilder(FoxDraw);
 
-            FoxDraw.AddHeroImage("Assets/hero-down.png", 0, 0);
+            FoxDraw.AddHeroImage("Assets/hero-down.png", x, y);
+            FoxDraw.AddHeroImage("Assets/hero-up.png", x, y);
+            FoxDraw.AddHeroImage("Assets/hero-left.png", x, y);
+            FoxDraw.AddHeroImage("Assets/hero-right.png", x, y);
+
+
         }
 
         private void KeyDownEvent(object sender, KeyEventArgs e)
         {
 
+
             if (e.Key == Key.Down)
             {
-                double x = FoxDraw.GetLeft(FoxDraw.HeroImages[0]) + 0;
-                double y = FoxDraw.GetTop(FoxDraw.HeroImages[0]) + 50;
-                FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+                if (y < 450)
+                {
+                    y += 50;
+                    FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+                }
             }
 
             if (e.Key == Key.Up)
             {
-                double x = FoxDraw.GetLeft(FoxDraw.HeroImages[0]) + 0;
-                double y = FoxDraw.GetTop(FoxDraw.HeroImages[0]) - 50;
-                FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+                if (y > 0)
+                {
+                    y -= 50;
+                    FoxDraw.SetPosition(FoxDraw.HeroImages[1], x, y);
+                }
             }
 
             if (e.Key == Key.Left)
             {
-                double x = FoxDraw.GetLeft(FoxDraw.HeroImages[0]) - 50;
-                double y = FoxDraw.GetTop(FoxDraw.HeroImages[0]) + 0;
-                FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+                if (x > 0 )
+                {
+                    x -= 50;
+                    FoxDraw.SetPosition(FoxDraw.HeroImages[2], x, y);
+                }
             }
 
             if (e.Key == Key.Right)
             {
-                double x = FoxDraw.GetLeft(FoxDraw.HeroImages[0]) + 50;
-                double y = FoxDraw.GetTop(FoxDraw.HeroImages[0]) + 0;
-                FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+                if (x <450 )
+                {
+                    x += 50;
+                    FoxDraw.SetPosition(FoxDraw.HeroImages[3], x, y);
+                }
             }
         }
     }

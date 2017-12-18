@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -34,9 +35,15 @@ namespace GreenFox
                 Source = new BitmapImage(new Uri(source, UriKind.Relative))
             };
 
+
+
+            StreamWriter wallTileList = new StreamWriter(@"C:\Users\Misi\greenfox\Skeletor48\week-05\RPGame\RPGame\RPGame\WallTileList.txt", true);
+            wallTileList.WriteLine(Convert.ToString(x), y);
+
             TileImages.Add(tileImage);
             Canvas.Children.Add(tileImage);
             SetPosition(tileImage, x, y);
+            wallTileList.Close();
         }
 
         public void AddTileImage(Canvas canvas, double x, double y)
