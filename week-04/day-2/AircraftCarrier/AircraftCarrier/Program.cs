@@ -8,9 +8,30 @@ namespace AircraftCarrier
     {
         static void Main(string[] args)
         {
-            var f35_01 = new F35();
+            Carrier aurora = new Carrier();
+            Carrier enterprise = new Carrier();
 
-            Console.WriteLine(f35_01.AllDamage);
+            aurora.GetStatus();
+            aurora.AddAircraft("F35");
+            aurora.AddAircraft("F16");
+            aurora.AddAircraft("F35");
+            aurora.AddAircraft("F16");
+            aurora.AddAircraft("F35");
+            aurora.AddAircraft("F35");
+            aurora.AddAircraft("F16");
+            aurora.AddAircraft("F35");
+            aurora.AddAircraft("F35");
+            aurora.GetStatus();
+            aurora.Fill();
+            aurora.GetStatus();
+            aurora.CarrierFight(enterprise);
+            enterprise.GetStatus();
+            aurora.GetStatus();
+            aurora.Fill();
+            aurora.CarrierFight(enterprise);
+            aurora.GetStatus();
+            enterprise.GetStatus();
+            
             Console.ReadKey();
         }
     }

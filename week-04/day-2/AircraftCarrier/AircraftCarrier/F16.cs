@@ -4,12 +4,16 @@ using System.Text;
 
 namespace AircraftCarrier
 {
-    class F16
+    class F16 : Aircraft
     {
-        Type = "F16";
-            MaxAmmo = 8;
-            BaseDamage = 30;
-            Ammo = 0;
-            AllDamage = BaseDamage* Ammo;
+        public F16() : base(8, 30)
+        {
+            Type = "F16";
+        }
+
+        public string GetAircraftType()
+        {
+            return Type;
+        }
     }
 }

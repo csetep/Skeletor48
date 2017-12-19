@@ -1,25 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace AircraftCarrier
 {
     class Aircraft
     {
-        public int Ammo { get; set; }
+        public int CurrentAmmo { get; set; } = 0;
         public int BaseDamage { get; set; }
-        public string Type { get; set; }
         public int MaxAmmo { get; set; }
         public int AllDamage { get; set; }
+        public string Type { get; set; }
 
-        public Aircraft()
+        public Aircraft(int maxAmmo, int baseDamage)
         {
-
+            MaxAmmo = maxAmmo;
+            BaseDamage = baseDamage;
         }
 
-        public string getType()
+        public int Fight()
         {
-            return Type;
+            int damage = CurrentAmmo * BaseDamage;
+            CurrentAmmo = 0;
+            return damage;
+        }
+
+        public int Refill(int capacity)
+        {
+            if (capacity < MaxAmmo)
+            {
+                CurrentAmmo = capacity;
+                capacity = 0;
+            }
+            else
+            {
+                CurrentAmmo = MaxAmmo;
+                capacity = capacity - MaxAmmo;
+            }
+            AllDamage = BaseDamage * CurrentAmmo;
+            return capacity;
         }
     }
 }

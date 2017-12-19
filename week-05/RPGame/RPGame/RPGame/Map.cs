@@ -12,35 +12,39 @@ namespace RPGame
     class Map
     {
 
-            public double coordinateX { get; set; }
-            public double coordinateY { get; set; }
+        public double CoordinateX { get; set; }
+        public double CoordinateY { get; set; }
+        public double[] TileCoordinates; 
 
-    
         public void MapBuilder(FoxDraw foxDraw)
         {
-            var tileImages = new List<Image>();
-            var random = new Random();
+            double coordinateX = CoordinateX;
+            double coordinateY = CoordinateY;
 
+            var tileImages = new List<Image>();
+
+            int counter = 0;
+
+            string[] wallElements = File.ReadAllLines(@"C:\Users\Misi\greenfox\Skeletor48\week-05\RPGame\RPGame\RPGame\WallTileList.txt").ToArray();
 
             for (int x = 0; x < 10; x++)
             {
                 coordinateX = x * 50;
 
-                for (int y = 0; y < 10; y++)
+                for (int y = 0; y < 11; y++)
                 {
-                    coordinateY = y * 50;
-                    foxDraw.AddTileImage("Assets/floor.png", coordinateX, coordinateY);
-                }
-            }
-
-            for (int x = 0; x < 10; x += 2)
-            {
-                coordinateX = x * 50;
-
-                for (int y = 0; y < 10; y += 2)
-                {
-                    coordinateY = y * 50;
-                    foxDraw.AddTileImage("Assets/wall.png", 50 * random.Next(1, 9), 50 * random.Next(0, 10));
+                    if (wallElements[counter] == "1")
+                    {
+                        coordinateY = y * 50;
+                        foxDraw.AddTileImage("Assets/floor.png", coordinateX, coordinateY);
+                    }
+                    else
+                    {
+                        coordinateY = y * 50;
+                        foxDraw.AddTileImage("Assets/wall.png", coordinateX, coordinateY);
+                        TileCoordinates[counter] = coordinateY;
+                    }
+                    counter++;
                 }
             }
         }

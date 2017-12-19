@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,8 @@ namespace RPGame
         public MainWindow()
         {
             InitializeComponent();
-            FoxDraw = new FoxDraw(canvas);
             var map = new Map();
-
+            FoxDraw = new FoxDraw(canvas);
 
             map.MapBuilder(FoxDraw);
 
@@ -38,47 +38,36 @@ namespace RPGame
             FoxDraw.AddHeroImage("Assets/hero-left.png", x, y);
             FoxDraw.AddHeroImage("Assets/hero-right.png", x, y);
 
-
         }
 
         private void KeyDownEvent(object sender, KeyEventArgs e)
         {
-
-
-            if (e.Key == Key.Down)
+            string[] wallElements = File.ReadAllLines(@"C:\Users\Misi\greenfox\Skeletor48\week-05\RPGame\RPGame\RPGame\WallTileList.txt").ToArray();
+        
+            
+            if (e.Key == Key.Down && y < 500)
             {
-                if (y < 450)
-                {
-                    y += 50;
-                    FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
-                }
+                y += 50;                                
+                FoxDraw.SetPosition(FoxDraw.HeroImages[0], x, y);
+            }
+              
+
+            if (e.Key == Key.Up && y > 0)
+            {
+                y -= 50;
+                FoxDraw.SetPosition(FoxDraw.HeroImages[1], x, y);
             }
 
-            if (e.Key == Key.Up)
+            if (e.Key == Key.Left && x > 0)
             {
-                if (y > 0)
-                {
-                    y -= 50;
-                    FoxDraw.SetPosition(FoxDraw.HeroImages[1], x, y);
-                }
+                x -= 50;
+                FoxDraw.SetPosition(FoxDraw.HeroImages[2], x, y);
             }
 
-            if (e.Key == Key.Left)
+            if (e.Key == Key.Right && x < 450)
             {
-                if (x > 0 )
-                {
-                    x -= 50;
-                    FoxDraw.SetPosition(FoxDraw.HeroImages[2], x, y);
-                }
-            }
-
-            if (e.Key == Key.Right)
-            {
-                if (x <450 )
-                {
-                    x += 50;
-                    FoxDraw.SetPosition(FoxDraw.HeroImages[3], x, y);
-                }
+                x += 50;
+                FoxDraw.SetPosition(FoxDraw.HeroImages[3], x, y);
             }
         }
     }

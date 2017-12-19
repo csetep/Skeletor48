@@ -6,13 +6,15 @@ namespace AircraftCarrier
 {
     class F35 : Aircraft
     {
-        public F35()
+        public F35() : base(12, 50)
         {
             Type = "F35";
-            MaxAmmo = 50;
-            BaseDamage = 12;
-            Ammo = 0;
-            AllDamage = BaseDamage * Ammo;
+
+        }
+
+        public string GetAircraftType()
+        {
+            return Type;
         }
     }
 }
