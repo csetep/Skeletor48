@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+
 namespace AircraftCarrier
 {
     class Aircraft
@@ -8,6 +10,7 @@ namespace AircraftCarrier
         public int MaxAmmo { get; set; }
         public int AllDamage { get; set; }
         public string Type { get; set; }
+        public List<Aircraft> airplaneSquadron = new List<Aircraft>();
 
         public Aircraft(int maxAmmo, int baseDamage)
         {
@@ -36,6 +39,12 @@ namespace AircraftCarrier
             }
             AllDamage = BaseDamage * CurrentAmmo;
             return capacity;
+        }
+
+        public string GetAircraftStatus()
+        {
+            return String.Format("Type: {0} Ammo: {1}, BaseDamage: {2}, AllDamage:{3},"
+                 , Type, CurrentAmmo, BaseDamage, AllDamage);
         }
     }
 }

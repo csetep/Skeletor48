@@ -14,8 +14,7 @@ namespace RPGame
 
         public double CoordinateX { get; set; }
         public double CoordinateY { get; set; }
-        public double[] TileCoordinates; 
-
+        
         public void MapBuilder(FoxDraw foxDraw)
         {
             double coordinateX = CoordinateX;
@@ -42,7 +41,6 @@ namespace RPGame
                     {
                         coordinateY = y * 50;
                         foxDraw.AddTileImage("Assets/wall.png", coordinateX, coordinateY);
-                        TileCoordinates[counter] = coordinateY;
                     }
                     counter++;
                 }

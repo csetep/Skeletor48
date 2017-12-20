@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AircraftCarrier
 {
@@ -12,26 +10,39 @@ namespace AircraftCarrier
             Carrier enterprise = new Carrier();
 
             aurora.GetStatus();
-            aurora.AddAircraft("F35");
+            enterprise.GetStatus();
+            Console.WriteLine("\n");
             aurora.AddAircraft("F16");
-            aurora.AddAircraft("F35");
             aurora.AddAircraft("F16");
-            aurora.AddAircraft("F35");
-            aurora.AddAircraft("F35");
             aurora.AddAircraft("F16");
             aurora.AddAircraft("F35");
             aurora.AddAircraft("F35");
             aurora.GetStatus();
+            Console.WriteLine("\n");
             aurora.Fill();
             aurora.GetStatus();
-            aurora.CarrierFight(enterprise);
+            Console.WriteLine("\n");
             enterprise.GetStatus();
+            Console.WriteLine("\n");
+            aurora.Attack(enterprise);
+            enterprise.GetStatus();
+            Console.WriteLine("\n");
             aurora.GetStatus();
+            Console.WriteLine("\n");
+            aurora.Fill();          
+            aurora.GetStatus();
+            Console.WriteLine("\n");
+            aurora.Attack(enterprise);
+            aurora.GetStatus();
+            Console.WriteLine("\n");
+            enterprise.GetStatus();
+            Console.WriteLine("\n");
             aurora.Fill();
-            aurora.CarrierFight(enterprise);
+            aurora.Attack(enterprise);
             aurora.GetStatus();
+            Console.WriteLine("\n");
             enterprise.GetStatus();
-            
+
             Console.ReadKey();
         }
     }

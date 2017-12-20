@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AircraftCarrier
+﻿namespace AircraftCarrier
 {
     class F16 : Aircraft
     {

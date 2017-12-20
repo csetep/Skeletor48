@@ -1,80 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AircraftCarrier
 {
     class Carrier
     {
         public int HealthPoint { get; set; } = 5000;
-        public int AllAmmo = 2300;
+        public int AllAmmo = 400;
         public int CurrentAmmo { get; set; }
-        public List<Aircraft> airplaneSquadron = new List<Aircraft>();
-        public int TotalDamage = 0;
+        public int TotalDamage { get; set; }
+        public List<Aircraft> fighterSquadron = new List<Aircraft>();
 
         public Carrier()
         {
-        CurrentAmmo = AllAmmo;
+            CurrentAmmo = AllAmmo;
         }
 
         public void AddAircraft(string type)
         {
             if (type == "F16")
             {
-                airplaneSquadron.Add(new F16());
+                fighterSquadron.Add(new F16());
             }
             else if (type == "F35")
             {
-                airplaneSquadron.Add(new F35());
+                fighterSquadron.Add(new F35());
             }
         }
 
         public void Fill()
         {
-            foreach (var aircraft in airplaneSquadron)
+
+            if (CurrentAmmo == 0)
             {
-                if (CurrentAmmo > aircraft.MaxAmmo)
+                throw new Exception("Out Of Ammo!!!");
+            }
+
+            foreach (var fighter in fighterSquadron)
+            {
+                if (CurrentAmmo < fighter.MaxAmmo * fighterSquadron.Count)
                 {
-                    CurrentAmmo = aircraft.Refill(CurrentAmmo);
+                    if (fighter.Type == "F35")
+                    {
+                        CurrentAmmo = fighter.Refill(CurrentAmmo);
+                    }                    
                 }
-                else if (CurrentAmmo < aircraft.MaxAmmo)
+                else
                 {
-                    if (aircraft.Type == "F35")
-                        CurrentAmmo = aircraft.Refill(CurrentAmmo);
+                    CurrentAmmo = fighter.Refill(CurrentAmmo);
                 }
             }
         }
 
-        public void CarrierFight(Carrier enemy)
+        public void Attack(Carrier enemy)
         {
+            TotalDamage = 0;
 
-            foreach (var plane in airplaneSquadron)
+            foreach (var fighter in fighterSquadron)
             {
-                TotalDamage += plane.Fight();
+                TotalDamage += fighter.Fight();
             }
 
             enemy.HealthPoint -= TotalDamage;
         }
 
+        public string GetCarrierStatus()
+        {
+            if (HealthPoint < 0)
+            {
+                return "It`s dead Jim! :(";
+            }
+
+            return String.Format("HP: {0}, Aircraft Count: {1}, Ammo Storage: {2}, Total Damage: {3} \nAircrafts:"
+                , HealthPoint, fighterSquadron.Count, CurrentAmmo, TotalDamage);
+        }
+
         public void GetStatus()
         {
-            if (HealthPoint > 0)
+            Console.WriteLine(GetCarrierStatus());
+
+            foreach (var plane in fighterSquadron)
             {
-                Console.WriteLine("HP: {0}, Aircraft Count: {1}, Ammo Storage: {2}, Total Damage: {3} \nAircrafts:"
-                    , HealthPoint, airplaneSquadron.Count, CurrentAmmo, TotalDamage);
-
-                foreach (var plane in airplaneSquadron)
-                {
-                    Console.WriteLine("Type: {0} Ammo: {1}, BaseDamage: {2}, AllDamage:{3},"
-                        , plane.Type, plane.CurrentAmmo, plane.BaseDamage, plane.AllDamage);
-                }
+                Console.WriteLine(plane.GetAircraftStatus());
             }
-            else
-            {
-                Console.WriteLine("It`s dead Jim! :(");
-            }
-
-
         }
     }
 }
