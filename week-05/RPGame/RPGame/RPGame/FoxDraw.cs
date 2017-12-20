@@ -27,14 +27,14 @@ namespace GreenFox
         }
 
         public void AddTileImage(string source, double x, double y)
-        {          
+        {
             var tileImage = new Image()
             {
                 Width = TileSize,
                 Height = TileSize,
                 Source = new BitmapImage(new Uri(source, UriKind.Relative))
-            };                      
-          
+            };
+
             TileImages.Add(tileImage);
             Canvas.Children.Add(tileImage);
             SetPosition(tileImage, x, y);

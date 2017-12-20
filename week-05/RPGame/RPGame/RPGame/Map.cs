@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using GreenFox;
 
@@ -14,7 +15,9 @@ namespace RPGame
 
         public double CoordinateX { get; set; }
         public double CoordinateY { get; set; }
-        
+        public List<double> wallXCoordinates = new List<double>();
+        public List<double> wallYCoordinates = new List<double>();
+
         public void MapBuilder(FoxDraw foxDraw)
         {
             double coordinateX = CoordinateX;
@@ -41,6 +44,9 @@ namespace RPGame
                     {
                         coordinateY = y * 50;
                         foxDraw.AddTileImage("Assets/wall.png", coordinateX, coordinateY);
+
+                        wallYCoordinates.Add(coordinateY);
+                        wallXCoordinates.Add(coordinateX);
                     }
                     counter++;
                 }
