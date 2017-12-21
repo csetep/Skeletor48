@@ -10,7 +10,6 @@ namespace AircraftCarrier
         public int MaxAmmo { get; set; }
         public int AllDamage { get; set; }
         public string Type { get; set; }
-        public List<Aircraft> airplaneSquadron = new List<Aircraft>();
 
         public Aircraft(int maxAmmo, int baseDamage)
         {

@@ -9,8 +9,8 @@ namespace AircraftCarrier
             Carrier aurora = new Carrier();
             Carrier enterprise = new Carrier();
 
-          //  Console.WriteLine(aurora.GetStatus());
-           // Console.WriteLine(enterprise.GetStatus());
+            Console.WriteLine(aurora.GetStatus());
+            Console.WriteLine(enterprise.GetStatus());
             aurora.AddAircraft("F16");
             aurora.AddAircraft("F16");
             aurora.AddAircraft("F16");
@@ -19,18 +19,18 @@ namespace AircraftCarrier
             Console.WriteLine(aurora.GetStatus());
 
             aurora.Fill();
-            //Console.WriteLine(aurora.GetStatus());
+            Console.WriteLine(aurora.GetStatus());
 
-            //aurora.Attack(enterprise);
-            //Console.WriteLine(enterprise.GetStatus());
+            aurora.Attack(enterprise);
+            Console.WriteLine(enterprise.GetStatus());
 
-            //aurora.Fill();        
-            //aurora.Attack(enterprise);
-            //Console.WriteLine(enterprise.GetStatus());
+            aurora.Fill();
+            aurora.Attack(enterprise);
+            Console.WriteLine(enterprise.GetStatus());
 
-            //aurora.Fill();
-            //aurora.Attack(enterprise);
-            //Console.WriteLine(enterprise.GetStatus());
+            aurora.Fill();
+            aurora.Attack(enterprise);
+            Console.WriteLine(enterprise.GetStatus());
 
             Console.ReadKey();
         }

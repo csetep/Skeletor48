@@ -13,6 +13,17 @@ namespace Garden
         public double CurrentWaterAmount = 0;
         public double AbsorbCapacity { get; set; }
         public string PlantType { get; set; }
-        
+        public int ThirstIndex { get; set; }
+
+        public bool ThirstChecker()
+        {
+            if (CurrentWaterAmount <= ThirstIndex)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
+
+

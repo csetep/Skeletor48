@@ -18,11 +18,13 @@ namespace Garden
             var orangeTree = new Tree("orange", "tree");
 
             Garden.PlantList.Add(yellowFlower);
-            Garden.PlantList.Add(yellowFlower);
-            Garden.PlantList.Add(yellowFlower);
-            Garden.PlantList.Add(yellowFlower);
+            Garden.PlantList.Add(blueFlower);
+            Garden.PlantList.Add(purpleTree);
+            Garden.PlantList.Add(orangeTree);
 
-
+            yellowFlower.ThirstChecker();
+            purpleTree.ThirstChecker();
+            Console.ReadKey();
 
 
 

@@ -37,9 +37,6 @@ namespace AircraftCarrier
             }
         }
 
-
-
-
         public void Fill()
         {
             try

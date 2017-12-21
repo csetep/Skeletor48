@@ -13,8 +13,9 @@ namespace Garden
             Color = color;
             PlantType = type;
             AbsorbCapacity = 0.4;
+            ThirstIndex = 5;
         }
 
-
+       
     }
 }
