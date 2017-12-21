@@ -9,14 +9,30 @@ namespace UniqueChars
     class Program
     {
         static void Main(string[] args)
-        {
-            UniqueCharacters("anagram");
-        }
+        {                    
+            IEnumerable<string> listOfUniqueLetters = UniqueCharacters1("anagram");
 
-        public static string UniqueCharacters(string word)
+            foreach (var letter in listOfUniqueLetters)
+            {
+                Console.Write("\"{0}\"", letter);
+            }
+            Console.ReadKey();
+
+        }              
+
+        public static IEnumerable<string> UniqueCharacters1(string word)
         {
-            char[] letters = word.ToCharArray();            
-            return "x";
+            List<string> list = new List<string>();
+            char[] letters = word.ToCharArray();
+
+            foreach (var letter in letters)
+            {
+                list.Add(letter.ToString());
+            }
+
+            IEnumerable<string> listOfUniqueCharacters = list.Distinct();       
+
+            return listOfUniqueCharacters;
         }
     }
 }
