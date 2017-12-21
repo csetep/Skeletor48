@@ -7,7 +7,7 @@ namespace AircraftCarrier
     class Carrier
     {
         public int HealthPoint { get; set; } = 5000;
-        public int AllAmmo = 0;
+        public int AllAmmo = 330;
         public int CurrentAmmo { get; set; }
         public int TotalDamage { get; set; }
         public List<Aircraft> fighterSquadron = new List<Aircraft>();
@@ -29,29 +29,27 @@ namespace AircraftCarrier
             }
         }
 
-        public void TotallyUnnecessaryFillMethodJustToCatchTheTotallyUnnecessaryExceptionMadeByMe()
+        public void AmmoChecker()
         {
-            try
+            if (CurrentAmmo == 0)
             {
-                TheRealFillMethod();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
+                throw new Exception("Out Of Ammo!!!");
             }
         }
 
 
 
 
-        public void TheRealFillMethod()
+        public void Fill()
         {
-
-            if (CurrentAmmo == 0)
+            try
             {
-                throw new Exception("Out Of Ammo!!!");
+                AmmoChecker();
             }
-
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             foreach (var fighter in fighterSquadron)
             {
                 if (CurrentAmmo < fighter.MaxAmmo * fighterSquadron.Count)
@@ -59,7 +57,7 @@ namespace AircraftCarrier
                     if (fighter.Type == "F35")
                     {
                         CurrentAmmo = fighter.Refill(CurrentAmmo);
-                    }                    
+                    }
                 }
                 else
                 {
@@ -91,7 +89,7 @@ namespace AircraftCarrier
                 , HealthPoint, fighterSquadron.Count, CurrentAmmo, TotalDamage);
         }
 
-        public StringBuilder GetStatus()
+        public string GetStatus()
         {
             StringBuilder statusStringBuilder = new StringBuilder();
 
@@ -104,7 +102,7 @@ namespace AircraftCarrier
 
             statusStringBuilder.Append("\n\n");
 
-            return statusStringBuilder;
+            return statusStringBuilder.ToString();
         }
     }
 }
