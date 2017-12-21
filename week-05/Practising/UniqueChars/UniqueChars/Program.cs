@@ -22,8 +22,8 @@ namespace UniqueChars
 
         public static IEnumerable<string> UniqueCharacters1(string word)
         {
-            List<string> list = new List<string>();
             char[] letters = word.ToCharArray();
+            List<string> list = new List<string>();
 
             foreach (var letter in letters)
             {
@@ -31,6 +31,21 @@ namespace UniqueChars
             }
 
             IEnumerable<string> listOfUniqueCharacters = list.Distinct();       
+
+            return listOfUniqueCharacters;
+        }
+
+        public static IEnumerable<string> UniqueCharacters1(string word)
+        {
+            char[] letters = word.ToCharArray();
+            List<string> list = new List<string>();
+
+            foreach (var letter in letters)
+            {
+                list.Add(letter.ToString());
+            }
+
+            IEnumerable<string> listOfUniqueCharacters = list.Distinct();
 
             return listOfUniqueCharacters;
         }
