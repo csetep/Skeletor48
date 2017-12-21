@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace AircraftCarrier
 {
     class Carrier
     {
         public int HealthPoint { get; set; } = 5000;
-        public int AllAmmo = 400;
+        public int AllAmmo = 0;
         public int CurrentAmmo { get; set; }
         public int TotalDamage { get; set; }
         public List<Aircraft> fighterSquadron = new List<Aircraft>();
@@ -28,7 +29,22 @@ namespace AircraftCarrier
             }
         }
 
-        public void Fill()
+        public void TotallyUnnecessaryFillMethodJustToCatchTheTotallyUnnecessaryExceptionMadeByMe()
+        {
+            try
+            {
+                TheRealFillMethod();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+
+
+
+        public void TheRealFillMethod()
         {
 
             if (CurrentAmmo == 0)
@@ -71,18 +87,24 @@ namespace AircraftCarrier
                 return "It`s dead Jim! :(";
             }
 
-            return String.Format("HP: {0}, Aircraft Count: {1}, Ammo Storage: {2}, Total Damage: {3} \nAircrafts:"
+            return String.Format("HP: {0}, Aircraft Count: {1}, Ammo Storage: {2}, Total Damage: {3} \nAircrafts:\n"
                 , HealthPoint, fighterSquadron.Count, CurrentAmmo, TotalDamage);
         }
 
-        public void GetStatus()
+        public StringBuilder GetStatus()
         {
-            Console.WriteLine(GetCarrierStatus());
+            StringBuilder statusStringBuilder = new StringBuilder();
+
+            statusStringBuilder.Append(GetCarrierStatus());
 
             foreach (var plane in fighterSquadron)
             {
-                Console.WriteLine(plane.GetAircraftStatus());
+                statusStringBuilder.Append(plane.GetAircraftStatus());
             }
+
+            statusStringBuilder.Append("\n\n");
+
+            return statusStringBuilder;
         }
     }
 }

@@ -43,7 +43,7 @@ namespace AircraftCarrier
 
         public string GetAircraftStatus()
         {
-            return String.Format("Type: {0} Ammo: {1}, BaseDamage: {2}, AllDamage:{3},"
+            return String.Format("Type: {0} Ammo: {1}, BaseDamage: {2}, AllDamage:{3} \n \r"
                  , Type, CurrentAmmo, BaseDamage, AllDamage);
         }
     }
