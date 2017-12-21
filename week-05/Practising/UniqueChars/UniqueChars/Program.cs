@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UniqueChars
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            UniqueCharacters("anagram");
+        }
+
+        public static string UniqueCharacters(string word)
+        {
+            char[] letters = word.ToCharArray();            
+            return "x";
+        }
+    }
+}
