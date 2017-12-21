@@ -14,15 +14,39 @@ namespace Garden
         public double AbsorbCapacity { get; set; }
         public string PlantType { get; set; }
         public int ThirstIndex { get; set; }
+        public bool Thirsty { get; set; }
+
+
+        public Plant()
+        {
+            
+        }
 
         public bool ThirstChecker()
         {
             if (CurrentWaterAmount <= ThirstIndex)
             {
-                return true;
+                return Thirsty;
             }
-            return false;
+            return Thirsty;
         }
+
+        public string FlowerStatus()
+        {
+            if (CurrentWaterAmount <= ThirstIndex)
+            {
+                return String.Format("The {0} {1} needs water \r\n", Color, PlantType);
+
+            }
+            else if(CurrentWaterAmount > ThirstIndex)
+            {
+                return String.Format("The {0} {1} doesn't need water \r\n",Color,PlantType);
+            }
+            return "0";
+        }
+            
+
+
     }
 }
 

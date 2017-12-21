@@ -11,24 +11,16 @@ namespace Garden
         static void Main(string[] args)
         {
 
-            var Garden = new Garden();
-            var yellowFlower = new Flower("yellow", "flower");
-            var blueFlower = new Flower("blue", "flower");
-            var purpleTree = new Tree("purple", "tree");
-            var orangeTree = new Tree("orange", "tree");
+            var garden = new Garden();
 
-            Garden.PlantList.Add(yellowFlower);
-            Garden.PlantList.Add(blueFlower);
-            Garden.PlantList.Add(purpleTree);
-            Garden.PlantList.Add(orangeTree);
+            garden.AddPlant("yellow", "flower");
+            garden.AddPlant("blue", "flower");
+            garden.AddPlant("purple", "tree");
+            garden.AddPlant("orange", "tree");
 
-            yellowFlower.ThirstChecker();
-            purpleTree.ThirstChecker();
+            Console.WriteLine(garden.GetGardenStatus());
+
             Console.ReadKey();
-
-
-
-
         }
     }
 }
