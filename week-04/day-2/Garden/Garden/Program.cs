@@ -10,15 +10,18 @@ namespace Garden
     {
         static void Main(string[] args)
         {
-
-            var garden = new Garden();
+            Printer printer = new Printer();
+            var garden = new Garden();           
 
             garden.AddPlant("yellow", "flower");
             garden.AddPlant("blue", "flower");
             garden.AddPlant("purple", "tree");
             garden.AddPlant("orange", "tree");
 
-            Console.WriteLine(garden.GetGardenStatus());
+
+            printer.PrintMethod(garden.GetGardenStatus());
+            printer.PrintMethod(garden.WateringGarden(40));
+            printer.PrintMethod(garden.WateringGarden(70));
 
             Console.ReadKey();
         }

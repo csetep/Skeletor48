@@ -9,6 +9,7 @@ namespace Garden
     public class Garden
     {
         public List<Plant> plantList = new List<Plant>();
+        Printer printer = new Printer();
 
         public void AddPlant(string color, string type)
         {
@@ -33,6 +34,20 @@ namespace Garden
 
             return gardenStringBuilder.ToString();
         }
+
+        public string WateringGarden(double amountOfWater)
+        {
+            foreach (var plant in plantList)
+            {
+                if (plant.CurrentWaterAmount <= plant.ThirstIndex)
+                {
+                   plant.CurrentWaterAmount += (amountOfWater / plantList.Count) * plant.AbsorbCapacity;
+                }
+            }
+
+            Console.WriteLine("Watering with {0}", amountOfWater);
+            return GetGardenStatus();
+        }             
     }
 }
 

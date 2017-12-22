@@ -8,12 +8,11 @@ namespace Garden
 {
     public class Flower:Plant
     {
-        public Flower(string color)
+        public Flower(string color) : base(0.75, 5)
         {
             Color = color;
-            PlantType = "Flower";
-            AbsorbCapacity = 0.4;
-            ThirstIndex = 5;
+            PlantType = "Flower";            
+            CurrentWaterAmount = 0;
         }       
     }
 }

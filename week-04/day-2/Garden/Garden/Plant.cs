@@ -10,25 +10,16 @@ namespace Garden
     public class Plant
     {
         public string Color { get; set; }
-        public double CurrentWaterAmount = 0;
+        public double CurrentWaterAmount { get; set; } = 0;
         public double AbsorbCapacity { get; set; }
         public string PlantType { get; set; }
-        public int ThirstIndex { get; set; }
-        public bool Thirsty { get; set; }
-
-
-        public Plant()
+        public int ThirstIndex { get; set; }        
+        public Garden garden = new Garden();
+        
+        public Plant(double absorbCapacity, int thirstIndex)
         {
-            
-        }
-
-        public bool ThirstChecker()
-        {
-            if (CurrentWaterAmount <= ThirstIndex)
-            {
-                return Thirsty;
-            }
-            return Thirsty;
+            AbsorbCapacity = absorbCapacity;
+            ThirstIndex = thirstIndex;
         }
 
         public string FlowerStatus()
@@ -36,18 +27,11 @@ namespace Garden
             if (CurrentWaterAmount <= ThirstIndex)
             {
                 return String.Format("The {0} {1} needs water \r\n", Color, PlantType);
-
             }
-            else if(CurrentWaterAmount > ThirstIndex)
+            else
             {
-                return String.Format("The {0} {1} doesn't need water \r\n",Color,PlantType);
+                return String.Format("The {0} {1} doesn't need water \r\n", Color, PlantType);
             }
-            return "0";
-        }
-            
-
-
+        }       
     }
 }
-
-
