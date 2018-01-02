@@ -42,15 +42,20 @@ namespace GreenFoxOrg
         }
 
         public object Clone()
-        {
+        {            
             return this.MemberwiseClone();
         }
 
-        public Student clone()
+        public Student GetClone()
         {
             var clone = (Clone() as Student);
 
             return clone;
+        }
+
+        public string GetBasicStudentData()
+        {
+            return String.Format("{0},{1}, {2},{3}", Name, Age, Gender, PreviousOrganization);
         }
     }
 }

@@ -13,10 +13,10 @@ namespace Garden
         public double CurrentWaterAmount { get; set; } = 0;
         public double AbsorbCapacity { get; set; }
         public string PlantType { get; set; }
-        public int ThirstIndex { get; set; }        
+        public double ThirstIndex { get; set; }
         public Garden garden = new Garden();
-        
-        public Plant(double absorbCapacity, int thirstIndex)
+
+        public Plant(double absorbCapacity, double thirstIndex)
         {
             AbsorbCapacity = absorbCapacity;
             ThirstIndex = thirstIndex;
@@ -32,6 +32,6 @@ namespace Garden
             {
                 return String.Format("The {0} {1} doesn't need water \r\n", Color, PlantType);
             }
-        }       
+        }        
     }
 }

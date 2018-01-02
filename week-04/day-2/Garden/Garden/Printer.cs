@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 namespace Garden
 {
     class Printer
-    {     
-    public void PrintMethod(Object method)
     {
-        Console.WriteLine(method);
-    }
+        public void PrintMethod(Object method)
+        {
+            Console.WriteLine(method);
+        }
     }
 }
-

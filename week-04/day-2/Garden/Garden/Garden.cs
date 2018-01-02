@@ -35,20 +35,33 @@ namespace Garden
             return gardenStringBuilder.ToString();
         }
 
+        public double ThirstyPlantCounter()
+        {
+            double numberOfThirstyPlants = 0;
+
+            foreach (var plant in plantList)
+            {
+                if (plant.CurrentWaterAmount <= plant.ThirstIndex)
+                {
+                    numberOfThirstyPlants++;
+                }
+            }
+
+            return numberOfThirstyPlants;
+        }
+
         public string WateringGarden(double amountOfWater)
         {
             foreach (var plant in plantList)
             {
                 if (plant.CurrentWaterAmount <= plant.ThirstIndex)
                 {
-                   plant.CurrentWaterAmount += (amountOfWater / plantList.Count) * plant.AbsorbCapacity;
+                    plant.CurrentWaterAmount += (amountOfWater / ThirstyPlantCounter()) * plant.AbsorbCapacity;
                 }
             }
 
             Console.WriteLine("Watering with {0}", amountOfWater);
             return GetGardenStatus();
-        }             
+        }
     }
 }
-
-
