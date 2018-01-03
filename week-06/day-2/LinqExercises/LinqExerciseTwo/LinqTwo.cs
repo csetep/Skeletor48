@@ -13,6 +13,11 @@ namespace LinqExerciseTwo
                 .ToList()
                 .Average();
 
+            var averageOfOddNumbers2 = (from num in numbers
+                                        where num % 2 != 0
+                                        select num).Average();
+
+            Console.WriteLine(averageOfOddNumbers2);
             Console.WriteLine(averageOfOddNumbers);
 
             Console.ReadKey();
