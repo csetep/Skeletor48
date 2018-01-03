@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExerciseOne", "LinqExer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExerciseTwo", "LinqExerciseTwo\LinqExerciseTwo.csproj", "{9DEB7238-1191-4AD2-90EF-1D6A78037145}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExerciseThree", "LinqExerciseThree\LinqExerciseThree.csproj", "{5B66349C-2AAE-4366-A617-A3160739873C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9DEB7238-1191-4AD2-90EF-1D6A78037145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DEB7238-1191-4AD2-90EF-1D6A78037145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DEB7238-1191-4AD2-90EF-1D6A78037145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B66349C-2AAE-4366-A617-A3160739873C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B66349C-2AAE-4366-A617-A3160739873C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B66349C-2AAE-4366-A617-A3160739873C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B66349C-2AAE-4366-A617-A3160739873C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
