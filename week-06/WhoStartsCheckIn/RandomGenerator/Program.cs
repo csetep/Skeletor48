@@ -31,7 +31,7 @@ namespace RandomGenerator
 
             control.StartProgram(random, classmates);                    
                        
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }

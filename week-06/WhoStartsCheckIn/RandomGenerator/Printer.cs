@@ -13,7 +13,8 @@ namespace RandomGenerator
                             + "\n================================================================================"
                             + "\n\t   Choose an option:"
                             + "\n\t   Press 'I' To Decide Who Starts the CheckIn!"
-                            + "\n\t   Press 'O' To Decide Who Starts the CheckOut!"                          
+                            + "\n\t   Press 'O' To Decide Who Starts the CheckOut!"   
+                            + "\n\t   Press 'E' To Exit!"
                             + "\n================================================================================"
                             );
         }
@@ -39,4 +40,5 @@ namespace RandomGenerator
         }
     }
 }
+
 
