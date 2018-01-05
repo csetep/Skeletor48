@@ -8,10 +8,8 @@ namespace RandomGenerator
         static void Main(string[] args)
         {
             var random = new Randomizer();
-            var printer = new Printer();
-            ConsoleKeyInfo pressKey;
-
-
+            var control = new Control();                
+            
             var classmates = new List<Classmates>
             {
                 new Classmates("Zsuzska"),
@@ -31,22 +29,8 @@ namespace RandomGenerator
                 new Classmates("Andras")
             };
 
-            printer.PrintHelpText();
-            pressKey = Console.ReadKey();
-
-            if (pressKey.Key == ConsoleKey.I)
-            {
-                printer.WhoStartsCheckinPrinter(random, classmates);
-            }
-            else if (pressKey.Key == ConsoleKey.O)
-            {
-                printer.WhoStartsCheckoutPrinter(random, classmates);
-            }
-            else
-            {
-                printer.PrintHelpText();
-            }
-
+            control.StartProgram(random, classmates);                    
+                       
             Console.ReadKey();
         }
     }
