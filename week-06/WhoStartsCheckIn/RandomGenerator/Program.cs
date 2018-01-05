@@ -7,7 +7,10 @@ namespace RandomGenerator
     {
         static void Main(string[] args)
         {
-            Randomizer random = new Randomizer();
+            var random = new Randomizer();
+            var printer = new Printer();
+            ConsoleKeyInfo pressKey;
+
 
             var classmates = new List<Classmates>
             {
@@ -28,12 +31,21 @@ namespace RandomGenerator
                 new Classmates("Andras")
             };
 
-            Console.WriteLine("\n\n\n\n\n \t\t\t\t Dear {0} ! " +
-                "\n\t\t\t You start the check-in today!" + "\n\n\n\t\t\t"+
-                      @"           ..(\ /)
-                                   ..('.')  
-                                    c(“)(“)"
-                , random.RandomizerMethod(classmates));
+            printer.PrintHelpText();
+            pressKey = Console.ReadKey();
+
+            if (pressKey.Key == ConsoleKey.I)
+            {
+                printer.WhoStartsCheckinPrinter(random, classmates);
+            }
+            else if (pressKey.Key == ConsoleKey.O)
+            {
+                printer.WhoStartsCheckoutPrinter(random, classmates);
+            }
+            else
+            {
+                printer.PrintHelpText();
+            }
 
             Console.ReadKey();
         }

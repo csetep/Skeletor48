@@ -11,7 +11,6 @@ namespace RandomGenerator
         public Classmates(string nameOfTheGame)
         {
             Name = nameOfTheGame;
-        }    
-        
+        }            
     }
 }
